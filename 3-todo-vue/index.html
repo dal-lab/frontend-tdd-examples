@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>ToDo Application</title>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="task in tasks">
+          <input type="checkbox" v-model="task.completed">
+          {{ task.title }}
+          <span v-if="task.completed">[DONE]</span>
+          <button type="button" @click="removeTask(task.id)">
+            Remove
+          </button>
+        </li>
+      </ul>
+      <div>
+        <input type="text" v-model="taskTitle">
+        <button type="button" @click="addNewTask">Add Task</button>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
