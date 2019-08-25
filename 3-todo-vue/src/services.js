@@ -1,9 +1,8 @@
 import Counter from './utils/counter';
 import { getTasks as apiGetTasks } from './apis/task';
 
-const counter = Counter();
-
 const state = {
+  counter: Counter(),
   tasks: [],
 };
 
@@ -16,11 +15,10 @@ export const getTasks = () => {
 };
 
 export const addTask = title => {
-  const lastTaskId = Math.max(0, ...state.tasks.map(task => task.id));
-  const id = Math.max(lastTaskId + 1, counter());
+  const { counter } = state;
   state.tasks = [
     ...state.tasks,
-    { id, title, completed: false },
+    { id: counter(), title, completed: false },
   ];
   return state.tasks;
 };
@@ -41,6 +39,8 @@ export const toggleTask = taskId => {
 
 export const fetchTasks = async () => {
   const tasks = await apiGetTasks();
+  const maxId = Math.max(0, ...tasks.map(task => task.id));
+  state.counter = Counter(maxId);
   state.tasks = tasks.slice(0, 10);
   return state.tasks;
 };

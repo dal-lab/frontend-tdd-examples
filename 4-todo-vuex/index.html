@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>ToDo Application</title>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="task in tasks">
+          <input type="checkbox" :checked="task.completed"
+            @input="toggleTask(task.id)"
+          />
+          {{ task.title }}
+          <span v-if="task.completed">[DONE]</span>
+          <button type="button" @click="removeTask(task.id)">
+            Remove
+          </button>
+        </li>
+      </ul>
+      <div>
+        <input type="text" :value="taskTitle"
+          @input="updateTaskTitle($event.target.value)"
+        />
+        <button type="button" @click="addTask">Add Task</button>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
