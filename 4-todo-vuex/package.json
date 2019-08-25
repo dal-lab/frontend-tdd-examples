@@ -1,8 +1,8 @@
 {
-  "name": "demo",
+  "name": "todo-app",
   "version": "0.0.1",
-  "description": "Jest Test Practice",
-  "main": "index.js",
+  "description": "ToDo Application",
+  "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server",
     "test": "jest"

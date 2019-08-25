@@ -1,5 +1,5 @@
-const Counter = () => {
-  let count = 0;
+const Counter = (initial = 1) => {
+  let count = initial - 1;
   return () => {
     count += 1;
     return count;
