@@ -14,7 +14,7 @@ const fetchTasks = async ({ state, setState }) => {
   const maxId = Math.max(0, ...tasks.map(task => task.id));
   setState({
     ...state,
-    counter: Counter(maxId),
+    counter: Counter(maxId + 1),
     tasks: tasks.slice(0, 10),
   });
 };
@@ -24,11 +24,8 @@ const App = () => {
   const { tasks, taskTitle } = state;
 
   useEffect(() => {
-    if (tasks.length) {
-      return;
-    }
     fetchTasks({ state, setState });
-  });
+  }, []);
 
   const setTaskTitle = taskTitle => {
     setState({ ...state, taskTitle });
