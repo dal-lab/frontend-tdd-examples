@@ -1,7 +1,9 @@
 jest.mock('./apis/task');
 
 import configureMockStore from 'redux-mock-store'
+
 import thunk from 'redux-thunk';
+
 import { setMockTasks } from './apis/task';
 
 import {

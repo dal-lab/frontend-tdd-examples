@@ -4,21 +4,20 @@
   "description": "ToDo Application",
   "main": "src/index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "parcel index.html",
     "test": "jest"
   },
   "author": "Ashal aka JOKER",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "babel-jest": "^24.9.0",
-    "jest": "^24.9.0",
-    "webpack": "^4.39.2",
-    "webpack-cli": "^3.3.7",
-    "webpack-dev-server": "^3.8.0"
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "babel-jest": "^27.5.1",
+    "jest": "^27.5.1",
+    "parcel": "^2.3.2",
+    "process": "^0.11.10"
   },
   "dependencies": {
-    "axios": "^0.19.0"
+    "axios": "^0.26.0"
   }
 }

@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+
 import { addTask, removeTask, toggleTask } from './functions';
+
 import Counter from './utils/counter';
+
 import { getTasks } from './apis/task';
 
 const initialState = {
@@ -19,7 +22,7 @@ const fetchTasks = async ({ state, setState }) => {
   });
 };
 
-const App = () => {
+export default function App() {
   const [state, setState] = useState(initialState);
   const { tasks, taskTitle } = state;
 
@@ -74,5 +77,3 @@ const App = () => {
     </>
   );
 }
-
-export default App;

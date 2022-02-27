@@ -1,5 +1,7 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+
 import { useSelector, useDispatch } from 'react-redux';
+
 import {
   addTask,
   removeTask,
@@ -8,7 +10,7 @@ import {
   setTaskTitle,
 } from './actions';
 
-const App = () => {
+export default function App() {
   const { tasks, taskTitle } = useSelector(state => ({
     tasks: state.tasks,
     taskTitle: state.taskTitle,
@@ -51,5 +53,3 @@ const App = () => {
     </>
   );
 }
-
-export default App;

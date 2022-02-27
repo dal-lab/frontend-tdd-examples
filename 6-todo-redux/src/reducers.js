@@ -7,6 +7,7 @@ import {
 } from './actionTypes';
 
 import { addTask, removeTask, toggleTask } from './functions';
+
 import Counter from './utils/counter';
 
 export const initialState = {
